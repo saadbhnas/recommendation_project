@@ -4,18 +4,18 @@ package_name: recommendation_model
 # Data Files
 training_data_file: movies_metadata.csv
 
-
 #  - movies_metadata.csv
 #  - credits.csv
 #  - keywords.csv
-#test_data_file: 
+#test_data_file:
 
 # Variables
 # The variable we are attempting to predict ()
-#target: 
+#target:
 
 pipeline_name: preprocessing_model
 pipeline_save_file: recommendation_model_output_v
+similiarity_score: similiarity_score
 
 movies_metadata_features:
   - adult
@@ -42,33 +42,32 @@ movies_metadata_features:
   - video
   - vote_average
   - vote_count
-  
+
 credits_features:
   - cast
-  - crew 
+  - crew
   - id
-  
+
 keywords_features:
   - id
   - keywords
-  
+
 movies_metadata_json_variables:
   - production_companies
   - belongs_to_collection
   - genres
   - production_countries
   - spoken_languages
-  
+
 credits_json_variables:
   - crew
   - cast
-  
-keywords_json_varibale: 
+
+keywords_json_varibale:
   - keywords
-  
+
 credits_vars_extract_names:
   - crew
-  
 
 # set train/test split
 test_size: 0.1
@@ -84,32 +83,27 @@ vars_extract_name:
   - production_companies
   - production_countries
   - spoken_languages
-  
 
-  
 strings_to_replace_overview:
   - No overview found.
   - No Overview
   - No movie overview available
-  -  
+  -
   - No movie overview available.
-  
+
 strings_to_replace_budget:
   - /ff9qCepilowshEtG2GYWwzt2bs4.jpg
   - /zV8bHuSL6WXoD6FWogP9j4x80bL.jpg
   - /zaSf5OG7V8X8gqFvly88zDdRm46.jpg
-  
+
 strings_to_replace_popularity: Beware Of Frost Bites
-  
-  
+
 adjust_budget_revenue_scale: 1000000
- 
 
 variables_drop:
   - imdb_id
   - homepage
   - poster_path
-  
 
 variables_to_replace:
   - overview
@@ -121,15 +115,14 @@ overview_replace:
   - No Overview
   - No movie overview available
   - No movie overview available.
-  
+
 popularity_replace:
   - Beware Of Frost Bites
-  
+
 changing_vars_type:
   - popularity
   - budget
-  
-  
+
 budget_replace:
   - /ff9qCepilowshEtG2GYWwzt2bs4.jpg
   - /zV8bHuSL6WXoD6FWogP9j4x80bL.jpg

@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import os
 from pathlib import Path 
 import sys 
 
-dir_path = Path(__file__).parents[2]
-sys.path.append(str(dir_path))
-
-
+project_root = Path(__file__).resolve().parents[2]
+sys.path.append(str(project_root))
 
 import recommendation_model
 from typing import  List, Optional 
@@ -31,6 +30,7 @@ class AppConfig(BaseModel):
     training_data_file: str
     #test_data_file: str
     pipeline_save_file: str
+    similiarity_score:str
 
 
 class ModelConfig(BaseModel):
